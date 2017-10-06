@@ -1,0 +1,11 @@
+<h1>All Comedians</h1>
+
+<% @comedians.each do |comedian| %>
+  <h2><a href="/comedian/<%=comedian.id%>"><%= comedian.name %></a></h2>
+  <h3>Age: <%= comedian.age %></h3>
+  <p><% comedian.specials.each do |special|%>
+    <%= special.name %></p>
+    <% end %>
+  <h3>Total Number of Specials: <%=comedian.specials.count%></h3>
+<% end %>
+<h2>Average Comedian Age: <%=@comedians.first.mean_age%></h2>
